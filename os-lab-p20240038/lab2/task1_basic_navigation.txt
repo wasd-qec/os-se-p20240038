@@ -1,0 +1,56 @@
+/home/both
+total 92
+drwxr-x--- 18 both both 4096 Mar 17 13:43 .
+drwxr-xr-x  3 root root 4096 Mar 12 14:36 ..
+-rw-------  1 both both  266 Mar 17 14:04 .bash_history
+-rw-r--r--  1 both both  220 Mar 31  2024 .bash_logout
+-rw-r--r--  1 both both 3771 Mar 31  2024 .bashrc
+drwx------ 14 both both 4096 Mar 17 13:43 .cache
+drwx------ 18 both both 4096 Mar 17 13:43 .config
+drwxr-xr-x  2 both both 4096 Mar 12 14:37 Desktop
+drwxr-xr-x  2 both both 4096 Mar 12 14:37 Documents
+drwxr-xr-x  2 both both 4096 Mar 17 13:50 Downloads
+-rw-rw-r--  1 both both  276 Mar 12 23:50 .gitconfig
+drwx------  4 both both 4096 Mar 12 14:37 .local
+drwxr-xr-x  2 both both 4096 Mar 12 14:37 Music
+drwxrwxr-x  4 both both 4096 Mar 12 23:51 os-se-p20240038
+drwxr-xr-x  2 both both 4096 Mar 12 15:58 Pictures
+drwx------  3 both both 4096 Mar 17 13:43 .pki
+-rw-r--r--  1 both both  807 Mar 31  2024 .profile
+drwxr-xr-x  2 both both 4096 Mar 12 14:37 Public
+drwx------  6 both both 4096 Mar 12 15:00 snap
+drwx------  2 both both 4096 Mar 17 13:22 .ssh
+-rw-r--r--  1 both both    0 Mar 12 16:10 .sudo_as_admin_successful
+drwxr-xr-x  2 both both 4096 Mar 12 14:37 Templates
+drwxr-xr-x  2 both both 4096 Mar 12 14:37 Videos
+drwxrwxr-x  4 both both 4096 Mar 17 13:44 .vscode
+--- Root directory (/) ---
+/
+bin
+bin.usr-is-merged
+boot
+cdrom
+dev
+etc
+home
+lib
+lib64
+lib.usr-is-merged
+lost+found
+media
+mnt
+opt
+proc
+root
+run
+sbin
+sbin.usr-is-merged
+snap
+srv
+swap.img
+sys
+tmp
+usr
+var
+--- Back to home ---
+/home/both

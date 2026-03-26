@@ -311,3 +311,30 @@ drwxrwxrwt  2 root root 4096 Mar 19 08:24 .X11-unix
 drwxrwxrwt  2 root root 4096 Mar 19 08:23 .XIM-unix
 --- Home (~) ---
 /home/both
+total 100
+drwxr-x--- 20 both both 4096 Mar 24 15:35 .
+drwxr-xr-x  3 root root 4096 Mar 12 14:36 ..
+-rw-------  1 both both 1345 Mar 19 11:10 .bash_history
+-rw-r--r--  1 both both  220 Mar 31  2024 .bash_logout
+-rw-r--r--  1 both both 3771 Mar 31  2024 .bashrc
+drwx------ 17 both both 4096 Mar 24 15:43 .cache
+drwx------ 18 both both 4096 Mar 19 10:03 .config
+drwx------  3 both both 4096 Mar 19 16:09 .copilot
+drwxr-xr-x  2 both both 4096 Mar 12 14:37 Desktop
+drwxr-xr-x  2 both both 4096 Mar 12 14:37 Documents
+drwxrwxr-x  3 both both 4096 Mar 19 10:07 .dotnet
+drwxr-xr-x  2 both both 4096 Mar 19 16:50 Downloads
+-rw-rw-r--  1 both both  276 Mar 12 23:50 .gitconfig
+drwx------  4 both both 4096 Mar 12 14:37 .local
+drwxr-xr-x  2 both both 4096 Mar 12 14:37 Music
+drwxrwxr-x  5 both both 4096 Mar 24 15:35 os-se-p20240038
+drwxr-xr-x  2 both both 4096 Mar 12 15:58 Pictures
+drwx------  3 both both 4096 Mar 17 13:43 .pki
+-rw-r--r--  1 both both  807 Mar 31  2024 .profile
+drwxr-xr-x  2 both both 4096 Mar 12 14:37 Public
+drwx------  6 both both 4096 Mar 12 15:00 snap
+drwx------  2 both both 4096 Mar 17 13:22 .ssh
+-rw-r--r--  1 both both    0 Mar 12 16:10 .sudo_as_admin_successful
+drwxr-xr-x  2 both both 4096 Mar 12 14:37 Templates
+drwxr-xr-x  2 both both 4096 Mar 12 14:37 Videos
+drwxrwxr-x  4 both both 4096 Mar 17 13:44 .vscode

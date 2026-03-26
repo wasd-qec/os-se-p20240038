@@ -1,0 +1,20 @@
+  121  cd ../..
+  122  echo "--- Up two levels to techcorp/ ---" >> ~/os-se-p20240038/os-lab-p20240038/lab2/task4_navigation_paths.txt
+  123  pwd >> ~/os-se-p20240038/os-lab-p20240038/lab2/task4_navigation_paths.txt
+  124  cd ~/os-se-p20240038/os-lab-p20240038/lab2/techcorp/marketing/campaigns
+  125  echo "--- Absolute path to marketing/campaigns/ ---" >> ~/os-se-p20240038/os-lab-p20240038/lab2/task4_navigation_paths.txt
+  126  pwd >> ~/os-se-p20240038/os-lab-p20240038/lab2/task4_navigation_paths.txt
+  127  ls >> ~/os-se-p20240038/os-lab-p20240038/lab2/task4_navigation_paths.txt
+  128  cd -
+  129  echo "--- cd - (back to previous directory) ---" >> ~/os-se-p20240038/os-lab-p20240038/lab2/task4_navigation_paths.txt
+  130  pwd >> ~/os-se-p20240038/os-lab-p20240038/lab2/task4_navigation_paths.txt
+  131  cd ~/os-se-p20240038/os-lab-p20240038/lab2
+  132  echo "--- Challenge Navigation ---" >> task4_navigation_paths.txt
+  133  ls
+  134  nano forkchild.c
+  135  gcc -o forkchild forkchild.c
+  136  ./forkchild > result_forkchild.txt 2>&1
+  137  cat result_forkchild.txt 
+  138  ps -ef --forest | grep forkchild
+  139  pstree -p $(pgrep -o forkchild)
+  140  history | tail -n 20 > command_used_forkchild.txt

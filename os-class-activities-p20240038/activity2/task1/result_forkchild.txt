@@ -1,0 +1,10 @@
+total 32
+drwxrwxr-x 2 both both  4096 Mar 26 16:21 .
+drwxrwxr-x 3 both both  4096 Mar 26 16:20 ..
+-rwxrwxr-x 1 both both 16400 Mar 26 16:21 forkchild
+-rw-rw-r-- 1 both both  1431 Mar 26 16:21 forkchild.c
+-rw-rw-r-- 1 both both     0 Mar 26 16:21 result_forkchild.txt
+Parent process (PID: 4525) — creating child...
+Parent: waiting for child (PID: 4526) to finish...
+Parent: child exited with status 0
+Parent: done.

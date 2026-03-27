@@ -21,3 +21,7 @@ social_media.txt
 --- cd - (back to previous directory) ---
 /home/both/os-se-p20240038/os-lab-p20240038/lab2/techcorp
 --- Challenge Navigation ---
+/home/both/os-se-p20240038/os-lab-p20240038/lab2/techcorp/engineering/backend
+/home/both/os-se-p20240038/os-lab-p20240038/lab2/techcorp/marketing/assets
+/usr/bin
+/home/both/os-se-p20240038/os-lab-p20240038/lab2/techcorp/hr/onboarding

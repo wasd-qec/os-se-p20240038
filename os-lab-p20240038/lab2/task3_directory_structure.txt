@@ -6,7 +6,7 @@ techcorp
 │   │   └── server_config.txt
 │   ├── devops
 │   │   ├── docker-compose.yml
-│   │   ├── Dockerfile
+│   │   ├── Dockerfile  
 │   │   └── pipeline.txt
 │   └── frontend
 │       ├── app_config.txt

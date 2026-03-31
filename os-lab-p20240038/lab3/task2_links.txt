@@ -84,3 +84,6 @@ lrwxrwxrwx   1 root root    22 Apr  8  2024 ebtables -> /usr/sbin/ebtables-nft
 1199551 -rw-rw-r-- 3 both both 35 Mar 31 17:40 eng_data.txt
 1199551 -rw-rw-r-- 3 both both 35 Mar 31 17:40 hr_data.txt
 1199551 -rw-rw-r-- 3 both both 35 Mar 31 17:40 shared_data.txt
+index.html
+1199551 -rw-rw-r-- 2 both both 35 Mar 31 17:40 eng_data.txt
+1199551 -rw-rw-r-- 2 both both 35 Mar 31 17:40 hr_data.txt

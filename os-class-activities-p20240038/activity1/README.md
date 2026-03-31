@@ -54,7 +54,7 @@ Screenshot of running `copyfilesyscall.c` on Linux:
 
 ### Part B — File Reader & Display
 
-**Describe your implementation:** [Your notes]
+**Describe your implementation:** [ I use the `open()` function and store it directory as destination and pass it into read with read only permission from the output.txt. And then i create a buffer variable size of]
 
 **Version A — Library Functions (`file_reader_lib.c`):**
 
@@ -68,11 +68,11 @@ Screenshot of running `copyfilesyscall.c` on Linux:
 
 1. **What does `read()` return? How is this different from `fgets()`?**
 
-   > [Your answer]
+   > [It returns the number of bytes read, it return 0 when it reach end of file but -1 if an error occure]
 
 2. **Why do you need a loop when using `read()`? When does it stop?**
 
-   > [Your answer]
+   > [the byte buffer is reading 256 bytes per loop iteration, so it is reading until the end of file]
 
 ---
 
@@ -92,15 +92,15 @@ Screenshot of running `copyfilesyscall.c` on Linux:
 
 1. **What struct does `readdir()` return? What fields does it contain?**
 
-   > [Your answer]
+   > [return a pointer to struct dir entry which contains: d_ino, d_off, d_reclen, d_type, d_name\[\]]
 
 2. **What information does `stat()` provide beyond file size?**
 
-   > [Your answer]
+   > [return struct stat with data: permission, inode number, device id, hard link count, owner UID and GID, file size in bytes, block size and count, access time modifier, change time]
 
 3. **Why can't you `write()` a number directly — why do you need `snprintf()` first?**
 
-   > [Your answer]
+   > [write operates on raw bytes that's why we need snprintf to convert numbers to its string representation]
 
 ---
 
@@ -128,7 +128,7 @@ Screenshot of running on Windows:
 
 ## Task 3: strace Analysis
 
-**Describe what you observed:** [What surprised you about the strace output? How many more system calls did the library version make?]
+**Describe what you observed:** [Why is the sys call slower than the library]
 
 ### strace Output — Library Version (File Creator)
 
@@ -160,7 +160,7 @@ Screenshot of running on Windows:
 
 1. **How many system calls does the library version make compared to the system call version?**
 
-   > [Your answer — use the `strace -c` counts]
+   > [38vs33]
 
 2. **What extra system calls appear in the library version? What do they do?**
 

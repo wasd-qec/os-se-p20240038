@@ -1,0 +1,86 @@
+=== Task 2: Hard Links and Symbolic Links ===
+--- Original file ---
+1198092 -rw-rw-r-- 1 both both 35 Mar 31 16:55 config_original.txt
+TechCorp Global Configuration v3.1
+
+--- After creating hard link ---
+1198092 -rw-rw-r-- 2 both both 35 Mar 31 16:55 config_hardlink.txt
+1198092 -rw-rw-r-- 2 both both 35 Mar 31 16:55 config_original.txt
+
+--- After creating symbolic link ---
+1198092 -rw-rw-r-- 2 both both 35 Mar 31 16:55 config_hardlink.txt
+1198092 -rw-rw-r-- 2 both both 35 Mar 31 16:55 config_original.txt
+1199423 lrwxrwxrwx 1 both both 19 Mar 31 17:07 config_symlink.txt -> config_original.txt
+
+--- Content via hard link ---
+TechCorp Global Configuration v3.1
+--- Content via symbolic link ---
+TechCorp Global Configuration v3.1
+
+--- Content via hard link ---
+TechCorp Global Configuration v3.1
+--- Content via symbolic link ---
+TechCorp Global Configuration v3.1
+
+--- After modifying original ---
+Hard link content:
+TechCorp Global Configuration v3.1
+Updated: New security patch applied.
+Symlink content:
+TechCorp Global Configuration v3.1
+Updated: New security patch applied.
+
+--- After deleting original file ---
+Hard link still works:
+TechCorp Global Configuration v3.1
+Updated: New security patch applied.
+Symlink is broken:
+cat: config_symlink.txt: No such file or directory
+1198092 -rw-rw-r-- 1 both both 72 Mar 31 17:11 config_hardlink.txt
+1199423 lrwxrwxrwx 1 both both 19 Mar 31 17:07 config_symlink.txt -> config_original.txt
+
+--- stat on hard link ---
+  File: config_hardlink.txt
+  Size: 72        	Blocks: 8          IO Block: 4096   regular file
+Device: 8,2	Inode: 1198092     Links: 1
+Access: (0664/-rw-rw-r--)  Uid: ( 1000/    both)   Gid: ( 1000/    both)
+Access: 2026-03-31 17:13:29.931857824 +0700
+Modify: 2026-03-31 17:11:39.954696198 +0700
+Change: 2026-03-31 17:13:29.930673500 +0700
+ Birth: 2026-03-31 16:55:43.951583987 +0700
+--- readlink on symlink ---
+config_original.txt
+
+--- Symlink to directory ---
+lrwxrwxrwx 1 both both 17 Mar 31 17:33 web_shortcut -> projects/frontend
+index.html
+
+--- Real-world symlinks in /usr/bin ---
+lrwxrwxrwx 1 root root      10 Nov 12 19:15 /usr/bin/python3 -> python3.12
+-rwxr-xr-x 1 root root 8020928 Mar  3 19:15 /usr/bin/python3.12
+lrwxrwxrwx 1 root root 24 Mar 31  2024 /usr/bin/editor -> /etc/alternatives/editor
+--- Symlinks in /etc/alternatives ---
+total 24
+drwxr-xr-x   2 root root  4096 Mar 19 10:09 .
+drwxr-xr-x 139 root root 12288 Mar 30 13:41 ..
+lrwxrwxrwx   1 root root    23 Apr  8  2024 arptables -> /usr/sbin/arptables-nft
+lrwxrwxrwx   1 root root    31 Apr  8  2024 arptables-restore -> /usr/sbin/arptables-nft-restore
+lrwxrwxrwx   1 root root    28 Apr  8  2024 arptables-save -> /usr/sbin/arptables-nft-save
+lrwxrwxrwx   1 root root    13 Apr  8  2024 awk -> /usr/bin/mawk
+lrwxrwxrwx   1 root root    29 Apr  8  2024 awk.1.gz -> /usr/share/man/man1/mawk.1.gz
+lrwxrwxrwx   1 root root    38 Mar 31  2024 builtins.7.gz -> /usr/share/man/man7/bash-builtins.7.gz
+lrwxrwxrwx   1 root root    12 Jan 31  2024 c++ -> /usr/bin/g++
+lrwxrwxrwx   1 root root    28 Jan 31  2024 c++.1.gz -> /usr/share/man/man1/g++.1.gz
+lrwxrwxrwx   1 root root    16 Nov 18  2020 c89 -> /usr/bin/c89-gcc
+lrwxrwxrwx   1 root root    32 Nov 18  2020 c89.1.gz -> /usr/share/man/man1/c89-gcc.1.gz
+lrwxrwxrwx   1 root root    16 Nov 18  2020 c99 -> /usr/bin/c99-gcc
+lrwxrwxrwx   1 root root    32 Jan 31  2024 c99.1.gz -> /usr/share/man/man1/c99-gcc.1.gz
+lrwxrwxrwx   1 root root    12 Jan 31  2024 cc -> /usr/bin/gcc
+lrwxrwxrwx   1 root root    28 Jan 31  2024 cc.1.gz -> /usr/share/man/man1/gcc.1.gz
+lrwxrwxrwx   1 root root    12 Jan 31  2024 cpp -> /usr/bin/cpp
+lrwxrwxrwx   1 root root    45 Feb 25  2025 default.plymouth -> /usr/share/plymouth/themes/bgrt/bgrt.plymouth
+lrwxrwxrwx   1 root root    22 Apr  8  2024 ebtables -> /usr/sbin/ebtables-nft
+--- Challenge Links ---
+1199551 -rw-rw-r-- 3 both both 35 Mar 31 17:40 eng_data.txt
+1199551 -rw-rw-r-- 3 both both 35 Mar 31 17:40 hr_data.txt
+1199551 -rw-rw-r-- 3 both both 35 Mar 31 17:40 shared_data.txt

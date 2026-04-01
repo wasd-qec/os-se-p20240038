@@ -231,3 +231,14 @@ GRUB_CMDLINE_LINUX=""
 
 # Uncomment to get a beep at grub start
 #GRUB_INIT_TUNE="480 440 1"
+
+--- Custom script /etc/grub.d/40_custom_techcorp ---
+#!/bin/sh
+exec tail -n +3 $0
+# Custom GRUB menu entry for TechCorp Training VM
+
+menuentry "TechCorp Training VM — Boot Standard" {
+    set root=(hd0,gpt2)
+    linux /boot/vmlinuz-6.17.0-19-generic root=/dev/sda1
+    initrd /boot/initrd.img-6.17.0-19-generic
+}

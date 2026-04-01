@@ -284,3 +284,9 @@ GRUB_BACKGROUND="/boot/grub/splash.tga"
 
 # Uncomment to get a beep at grub start
 #GRUB_INIT_TUNE="480 440 1"
+
+=== Part C: Boot Recovery ===
+6.17.0-19-generic
+ 10:40:10 up 6 min,  1 user,  load average: 0.00, 0.07, 0.05
+Boot recovery successful on Wed Apr  1 12:51:27 PM +07 2026
+--- Challenge GRUB ---

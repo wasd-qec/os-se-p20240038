@@ -1,0 +1,20 @@
+  799  sudo ldconfig
+  800  ldconfig -p | grep techcorp
+  801  ldd ./sysinfo_test_v2
+  802  cd ..
+  803  se-lor-hengrith
+  804  ssh ssh2.rathpisey.site
+  805  mkidr task3_shm
+  806  mkdir task3_shm
+  807  cd task3_shm
+  808  nano shm-producer.c
+  809  nano shm-consumer.c
+  810  gcc -o shm-producer shm-producer.c -lrt
+  811  gcc -o shm-consumer shm-consumer.c -lrt
+  812  ./shm-producer
+  813  ./shm-consumer
+  814  ./shm-consumer > result-shm-ipc.txt
+  815  ./shm-producer
+  816  ./shm-consumer > result-shm-ipc.txt
+  817  cat result-shm-ipc.txt 
+  818  history | tail -n 20 > command_used_shm.txt

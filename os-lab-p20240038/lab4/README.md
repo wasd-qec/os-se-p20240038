@@ -1,7 +1,7 @@
 # OS Lab 4 Submission — I/O Redirection, Pipelines & Process Management
 
-- **Student Name:** [Your Name Here]
-- **Student ID:** [Your Student ID Here]
+- **Student Name:** [Rith Chankolboth]
+- **Student ID:** [p20240038]
 
 ---
 

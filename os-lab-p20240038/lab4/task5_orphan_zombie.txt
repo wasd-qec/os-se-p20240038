@@ -1,2 +1,6 @@
 === Task 5: Orphan & Zombie Processes ===
 --- Orphan process observation ---
+Child PID: <7687>, Original PPID: <7686>, New PPID after parent exit: <1999>
+--- Zombie process observation ---
+Zombie PID: <7923>, State: Z (zombie/defunct), Parent PID: <7922>
+--- Zombie and Orphan Cleanup Notes ---

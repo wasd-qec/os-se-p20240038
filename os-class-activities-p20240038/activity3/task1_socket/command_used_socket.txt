@@ -1,0 +1,20 @@
+  626  git add.
+  627  git add .
+  628  git commit -m ".."
+  629  git status
+  630  git add .
+  631  git commit -m "."
+  632  git push origin main
+  633  git clone https://github.com/wasd-qec/os-se-p20240038.git
+  634  ssh ssh2.rathpisey.site
+  635  mkdir task1_socket
+  636  cd task1_socket/
+  637  nano server.c
+  638  $ ./server > result_server.txt 2>&1 &
+  639  $ sleep 1 ./client > result_client.txt 2>&1
+  640  ./server > result_server.txt 2>&1 &
+  641  sleep 1
+  642  ./client > result_client.txt 2>&1
+  643  wait
+  644  cat result_server.txt result_client.txt > result_socket.txt
+  645  history | tail -n 20 > command_used_socket.txt

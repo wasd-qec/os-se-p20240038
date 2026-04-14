@@ -1,0 +1,13 @@
+both       32578   32567   32578  0    5 11:56 pts/0    00:00:00 ./threads_observe
+both       32578   32567   32579  0    5 11:56 pts/0    00:00:00 ./threads_observe
+both       32578   32567   32580  0    5 11:56 pts/0    00:00:00 ./threads_observe
+both       32578   32567   32581  0    5 11:56 pts/0    00:00:00 ./threads_observe
+both       32578   32567   32582  0    5 11:56 pts/0    00:00:00 ./threads_observe
+both       32628   32617   32628  0    1 11:57 pts/2    00:00:00 grep --color=auto threads_observe
+    PID    SPID TTY          TIME CMD
+--- /proc/<PID>/task/ listing ---
+32655
+32656
+32657
+32658
+32659

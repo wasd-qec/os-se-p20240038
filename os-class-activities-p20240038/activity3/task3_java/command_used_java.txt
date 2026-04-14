@@ -1,0 +1,30 @@
+  653  ./threads_mutex > result_threads_mutex.txt 2>&1
+  654  cat result_threads_mutex.txt
+  655  history | tail -n 20 > command_used_threads.txt
+  656  cd ../task3_java
+  657  nano ThreadDemo.java
+  658  javac ThreadDemo.java
+  659  java -version
+  660  sudo apt update
+  661  sudo apt install build-essential default-jdk -y
+  662  sudo apt update
+  663  sudo apt install build-essential default-jdk -y
+  664  sudo nano /etc/apt/sources.list
+  665  nano /etc/apt/sources.list.d/ubuntu.sources
+  666  sudo apt update
+  667  sudo apt install build-essential default-jdk -y
+  668  javac ThreadDemo.java
+  669  java -version
+  670  ls
+  671  java ThreadDemo > result_thread_demo.txt 2>&1
+  672  ls
+  673  cat result_thread_demo.txt 
+  674  nano RunnableDemo.java
+  675  javac RunnableDemo.java
+  676  java RunnableDemo > result_runnable_demo.txt 2>&1
+  677  cat result_runnable_demo.txt
+  678  nano PoolDemo.java
+  679  javac PoolDemo.java
+  680  java PoolDemo > result_pool_demo.txt 2>&1
+  681  cat result_pool_demo.txt
+  682  history | tail -n 30 > command_used_java.txt

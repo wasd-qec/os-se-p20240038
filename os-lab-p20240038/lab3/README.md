@@ -1,9 +1,9 @@
 # OS Lab 3 Submission — Wildcards, Links, GRUB & Shared Libraries
 
-- **Student Name:** [Your Name Here]
-- **Student ID:** [Your Student ID Here]
-- **Partner Name (Task 5):** [Partner Name Here]
-- **Partner ID (Task 5):** [Partner Student ID Here]
+- **Student Name:** Rith Chankolboth
+- **Student ID:** p20240038
+- **Partner Name (Task 5):** None
+- **Partner ID (Task 5):** N/A
 
 ---
 

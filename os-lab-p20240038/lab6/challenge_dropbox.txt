@@ -1,0 +1,12 @@
+drwx-ws--T 2 root devteam 4096 Jun 11 14:34 /opt/techcorp/dropbox
+
+=== Bob attempting to delete Alice's file ===
+rm: cannot remove '/opt/techcorp/dropbox/alice_file.txt': Operation not permitted
+
+=== Bob attempting to delete Alice's file ===
+rm: cannot remove '/opt/techcorp/dropbox/alice_file.txt': Operation not permitted
+
+=== Directory listing (as root) ===
+total 0
+-rw-rw-r-- 1 dev_alice devteam 0 Jun 11 15:12 alice_file.txt
+-rw-rw-r-- 1 dev_bob   devteam 0 Jun 11 15:12 bob_file.txt

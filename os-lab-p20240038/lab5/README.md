@@ -89,4 +89,5 @@ Show the output of your `challenge.c` program joining its threads and exiting gr
 
 ## Reflection
 
-> _What was the most challenging part of managing threads and signals in this lab? How do you think these concepts apply to large-scale applications like web servers or databases?_
+> The most challenging part of this lab was coordinating signals with concurrent threads. Since signals interrupt the normal thread execution flow, writing thread-safe signal handlers and managing how different threads handle or ignore signals (like catching SIGINT) requires careful design. 
+> These concurrency and signal handling concepts are absolutely critical for large-scale applications like web servers or database systems, where a parent thread must listen for network connections, delegate work to pool threads, and gracefully handle termination signals (like shutdown or reload config signals) without corrupting transactions or active user connections.

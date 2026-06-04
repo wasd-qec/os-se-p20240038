@@ -1,0 +1,12 @@
+dev_alice:x:1001:1001::/home/dev_alice:/bin/bash
+dev_bob:x:1002:1002::/home/dev_bob:/bin/bash
+total 36
+drwxr-xr-x  9 root      root      4096 Jun  9 13:50 .
+drwxr-xr-x 23 root      root      4096 Mar 12 14:36 ..
+drwxr-x--- 25 both      both      4096 Jun  4 17:54 both
+drwxr-x---  5 dev_bob   dev_bob   4096 May 12 14:52 caro
+drwxr-x---  2 dev_alice dev_alice 4096 Jun  9 13:50 dev_alice
+drwxr-x---  2 dev_bob   dev_bob   4096 Jun  9 13:50 dev_bob
+drwxr-x---  2      1004      1004 4096 May 12 14:31 heng
+drwxr-x--- 14 dev_alice dev_alice 4096 May 12 14:48 hengrith
+drwxr-x---  2      1003      1003 4096 May 12 14:31 kolboth

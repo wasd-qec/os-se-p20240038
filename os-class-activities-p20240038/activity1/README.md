@@ -114,15 +114,15 @@ Screenshot of running on Windows:
 
 1. **Why does Windows use `HANDLE` instead of integer file descriptors?**
 
-   > [Your answer]
+   > Windows uses `HANDLE` objects, which are opaque pointers or indexes to entries in a process-specific kernel handle table, because the Windows kernel uses an object-oriented architecture where objects (processes, threads, events, files) are managed in kernel memory and protected from direct user-space manipulation. Integer file descriptors in Unix/POSIX are indexes into a file descriptor table representing only files and sockets, whereas Windows handles represent a broader variety of system objects with fine-grained access security attributes.
 
 2. **What is the Windows equivalent of POSIX `fork()`? Why is it different?**
 
-   > [Your answer]
+   > The closest Windows equivalent is `CreateProcess()`. It is different because `fork()` duplicates the parent process's entire memory space, file descriptor table, and context to create a child process executing from the same instruction point, whereas `CreateProcess()` creates a new, independent process from scratch by loading a specific executable binary, setting up a fresh virtual address space, and running from its main entry point.
 
 3. **Can you use POSIX calls on Windows?**
 
-   > [Your answer]
+   > Yes, POSIX calls can be used on Windows through compatibility layers or libraries. Historically, Windows included a POSIX subsystem. Today, developers use subsystems like WSL (Windows Subsystem for Linux), compilation suites like MinGW/MSYS2, or POSIX-emulation runtime layers like Cygwin which translate POSIX calls into Windows API calls.
 
 ---
 
@@ -160,19 +160,19 @@ Screenshot of running on Windows:
 
 1. **How many system calls does the library version make compared to the system call version?**
 
-   > [38vs33]
+   > The library version makes slightly more system calls during startup and initialization (e.g. 38 vs 33 calls in this setup). However, for I/O operations specifically, the library version uses buffered writing which batches multiple standard outputs into fewer system level write calls, while the direct syscall version issues a system call for every single write command.
 
 2. **What extra system calls appear in the library version? What do they do?**
 
-   > [Your answer — mention `brk`, `mmap`, `fstat`, etc.]
+   > System calls like `brk` and `mmap` appear in the library version. `brk` is used to change the data segment size (allocating heap memory for stdio buffers), and `mmap` maps files or devices into memory (often used to map the C standard library `libc.so` or establish buffered allocation zones). `fstat` retrieves file status information to check buffer settings.
 
 3. **How many `write()` calls does `fprintf()` actually produce?**
 
-   > [Your answer]
+   > Because of library-level buffering (standard I/O buffering), `fprintf()` batches the data in user-space buffers and only calls `write()` when the buffer is full, when `fflush()` is called, or when the file is closed. In this scenario, it produces exactly **1** system `write()` call for the entire batch of outputs.
 
 4. **In your own words, what is the real difference between a library function and a system call?**
 
-   > [Your answer]
+   > A library function (like `printf()` or `fopen()`) runs entirely in user space, offering convenience wrappers, abstractions, and performance optimizations (like buffering). A system call (like `write()` or `open()`) is an entry point into the operating system kernel, requiring a context switch (CPU privilege mode change from user mode to kernel mode) to perform hardware or OS-level operations.
 
 ---
 
@@ -206,23 +206,23 @@ Screenshot of running on Windows:
 
 1. **What is `/proc`? Is it a real filesystem on disk?**
 
-   > [Your answer]
+   > `/proc` is a virtual filesystem (known as procfs) that does not exist on disk. It is generated dynamically by the Linux kernel in memory to expose kernel data structures, system information (like cpuinfo, meminfo), and process state in a structured filesystem layout.
 
 2. **Monolithic kernel vs. microkernel — which type does Linux use?**
 
-   > [Your answer]
+   > Linux uses a monolithic kernel architecture. This means all operating system services (VFS, virtual memory, scheduler, device drivers) run within the same kernel space and share the same address space for maximum performance, although Linux is modular and allows loading kernel modules dynamically.
 
 3. **What memory regions do you see in `/proc/self/maps`?**
 
-   > [Your answer]
+   > You see memory regions representing the text segment (code), data segment (initialized/uninitialized variables), heap (dynamic allocation), shared libraries (`.so` files), stack (local variables and thread stacks), and virtual mapping regions (like `vvar`, `vdso`, `vsyscall`).
 
 4. **Break down the kernel version string from `uname -a`.**
 
-   > [Your answer]
+   > For a kernel version string like `6.8.0-31-generic`: `6` is the major version, `8` is the minor version, `0` is the patch level, `31` is the ABI/distribution release number, and `generic` indicates the kernel configuration profile for general-purpose hardware.
 
 5. **How does `/proc` show that the OS is an intermediary between programs and hardware?**
 
-   > [Your answer]
+   > It provides user-space programs with a read/write file interface to hardware-specific details (like `/proc/cpuinfo` or `/proc/meminfo`) and process runtime structures. Programs read `/proc` files to learn about CPU or memory state without directly interacting with system hardware buses.
 
 ---
 
@@ -230,4 +230,4 @@ Screenshot of running on Windows:
 
 What did you learn from this activity? What was the most surprising difference between library functions and system calls?
 
-> [Write your reflection here]
+> This activity clearly demonstrated the performance differences between direct system calls and library functions. I learned that calling a system call for every tiny byte of input or output creates substantial context-switching overhead because the CPU has to switch from user mode to kernel mode repeatedly. Library functions like `fprintf` optimize this by buffering the data in user space and writing it in batches, which dramatically increases execution speed. It was surprising to see how `/proc` exposes the inner workings of the operating system as virtual files.

@@ -17,7 +17,16 @@ Screenshot of compiling and running `forkchild.c`:
 ### Output
 
 ```
-[Paste the content of result_forkchild.txt here]
+total 32
+drwxrwxr-x 2 both both  4096 Mar 26 16:21 .
+drwxrwxr-x 3 both both  4096 Mar 26 16:20 ..
+-rwxrwxr-x 1 both both 16400 Mar 26 16:21 forkchild
+-rw-rw-r-- 1 both both  1431 Mar 26 16:21 forkchild.c
+-rw-rw-r-- 1 both both     0 Mar 26 16:21 result_forkchild.txt
+Parent process (PID: 4525) — creating child...
+Parent: waiting for child (PID: 4526) to finish...
+Parent: child exited with status 0
+Parent: done.
 ```
 
 ### Questions
@@ -36,7 +45,12 @@ Screenshot of compiling and running `forkchild.c`:
 
 4. **Draw the process tree for your program (parent → child). Include PIDs from your output.**
 
-   > [Your answer / diagram]`
+   > ```text
+   >   [Parent Process: forkchild] (PID: 4525)
+   >              │
+   >              ▼
+   >   [Child Process: ls -la] (PID: 4526)
+   > ```
 
 5. **Which command did you use to view the process tree (`ps --forest`, `pstree`, or `htop`)? What information does each column show?**
 
@@ -134,7 +148,9 @@ Screenshot of compiling and running `shm-producer` and `shm-consumer`:
 ### Output
 
 ```
-[Paste the content of result-shm-ipc.txt here]
+Consumer: reading from shared memory 'OS-kolboth'
+Consumer: message = "Hello, this is shared memory IPC!"
+Consumer: shared memory unlinked.
 ```
 
 ### Questions
@@ -199,7 +215,9 @@ Screenshot of compiling and running `sender` and `receiver`:
 ### Output
 
 ```
-[Paste the content of result-mq-ipc.txt here]
+Receiver: message received from queue '/queue-kolboth'
+Receiver: message = "Hello from sender! This is message queue IPC."
+Receiver: queue unlinked.
 ```
 
 ### Questions
@@ -259,6 +277,5 @@ Multiple receivers: Yes technically, but with a caveat — Multiple receivers ca
 
 What did you learn from this activity? What was the most interesting difference between Linux and Windows process creation? Which IPC method do you prefer and why?
 
-> [Write your reflection here]# Class Activity 2 — Processes & Inter-Process Communication
-
+> This activity demonstrated the distinct programming paradigms of Linux and Windows. The fork-and-exec model in Linux is elegant but duplicates the parent process context, requiring explicit cleanup and wait coordination. In contrast, Windows' CreateProcess handles creation atomically, initializing resources directly. For IPC, I prefer Message Queues because they provide built-in synchronization, ordered queueing (FIFO), and thread safety out of the box, unlike Shared Memory which requires additional synchronization primitives (mutexes/semaphores) to avoid race conditions.
 

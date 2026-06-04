@@ -92,16 +92,16 @@ After finishing all tasks, run `history | tail -n 100` and take a screenshot.
 ## Answers to Task 5 Questions
 
 1. **How are orphans cleaned up?**
-   > _Your answer here_
+   > Orphan processes (whose parent exits before they do) are adopted by the system's init process (PID 1, e.g. `systemd`). The init process periodically reaps them by calling `wait()` when they terminate, cleaning up their exit statuses and removing them from the process table.
 
 2. **How are zombies cleaned up?**
-   > _Your answer here_
+   > Zombie processes (terminated processes whose exit status has not been read by their parent) are cleaned up when the parent process calls `wait()` or `waitpid()`. If the parent exits without calling wait, the zombie child is adopted by init (PID 1), which reaps it.
 
 3. **Can you kill a zombie with `kill -9`? Why or why not?**
-   > _Your answer here_
+   > No, you cannot kill a zombie process with `kill -9` because the process is already dead (it has terminated execution and released its memory and resources). It only exists as an entry in the kernel's process table so the parent can read its exit status.
 
 ---
 
 ## Reflection
 
-> _What was the most useful command/technique you learned in this lab? How would you use pipelines and redirection in a real server environment?_
+> The most useful technique I learned in this lab was building multi-command pipelines and redirecting I/O streams. In a real server environment, I would use redirection to log service outputs to disk and use pipelines (e.g. combining `cat`, `grep`, `awk`, and `sort`) to parse server access logs, identify traffic trends, find errors, and automate diagnostics reports. Observing orphan and zombie behaviors directly with `ps` also solidified my understanding of process lifecycles.

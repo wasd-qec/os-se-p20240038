@@ -1,0 +1,6 @@
+]633;E;echo "=== guestbook permissions ===";7d578468-3260-465a-bae2-01529acb0f3f]633;C=== guestbook permissions ===
+-rw------- 1 both both 37 Jun 4 18:02 /home/both/guestbook.txt
+=== sign_book permissions ===
+-rwsr-xr-x 1 both both 16096 Jun 4 18:00 /home/both/bin/sign_book
+=== guestbook contents ===
+Visitor signed: Hello from dev_alice

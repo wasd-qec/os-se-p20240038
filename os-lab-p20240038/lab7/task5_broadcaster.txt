@@ -1,0 +1,6 @@
+ ]633;E;echo "=== broadcaster script ===";7d578468-3260-465a-bae2-01529acb0f3f  ]633;C === broadcaster script ===
+-rwxrwxr-x 1 both both 331 Jun 4 17:44 /home/both/bin/broadcaster
+=== outbox permissions ===
+drwxr-xr-x 2 both both 4096 Jun 4 17:49 /home/both/public_outbox
+=== secret.txt ===
+scheduler - 2026-06-04 17:44:41

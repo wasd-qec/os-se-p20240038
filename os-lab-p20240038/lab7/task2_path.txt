@@ -1,0 +1,7 @@
+]633;E;echo "=== PATH ===";7d578468-3260-465a-bae2-01529acb0f3f]633;C=== PATH ===
+/home/both/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/both/.antigravity-ide/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts:/home/both/.antigravity-ide/extensions/vscjava.vscode-java-debug-0.59.0-universal/bundled/scripts/noConfigScripts
+=== warmup location ===
+/home/both/bin/warmup
+=== warmup command output ===
+Hello from my first script! My current directory is:
+/home/both

@@ -1,0 +1,9 @@
+]633;E;echo "=== mailman output ===";df9ca2c4-8712-4722-bbed-f63e9d34efa0]633;C=== mailman output ===
+Sent message to both
+Messages sent: 1
+=== my inbox ===
+total 4
+-rw-rw-r-- 1 both      both      100 Jun 04 18:56 message_from_both.txt
+-rw-rw-r-- 1 dev_alice dev_alice   0 Jun 04 17:41 test_from_dev_alice.txt
+=== messages I received ===
+Hello both, I am an automated bot written by both. I successfully read your secret word: scheduler.

@@ -1,0 +1,5 @@
+]633;E;echo "=== inbox permissions ===";7d578468-3260-465a-bae2-01529acb0f3f]633;C=== inbox permissions ===
+drwx-wx-wx 2 both both 4096 Jun 4 17:41 /home/both/public_inbox
+=== inbox files as owner ===
+total 0
+-rw-rw-r-- 1 dev_alice dev_alice 0 Jun 4 17:41 test_from_dev_alice.txt

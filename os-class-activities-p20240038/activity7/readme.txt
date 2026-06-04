@@ -125,3 +125,20 @@ Max[P2][C] = 2 + (b mod 4) = 2 + (3 mod 4) = 2+3=5
          - Need[P1] = [1, 2, 2] > Work [0, 4, 5]
          - Need[P2] = [1, 0, 3] > Work [0, 4, 5] (since Need[P2] became [6,0,3] - [5,0,0] = [1,0,3])
          No processes can finish, UNSAFE;
+Task4
+
+Case 1:
+P1 hold s1, request s2
+P2 hold s2 and request s3,
+Since p1 hold s1, p3 cannot even start so s3 is available
+then P2 takes s3 and release s2 and s3 since s1 is still held then P1 get s2 first
+then P1 finish and release s1 
+then P3 can finish 
+
+Case 2:
+P1 is fine
+In case P2 hold s2 then it works like case 1 but in 
+worse case P3 hold s2 then it create a dealock becasue P3 will also hold s3 but can never get S1 so it becomes a deadlock
+
+Case 3:
+Its the same as case2 but even if P3 held s2 it's fine cuz theres an extra instance of s1 to finish P3 and move on to others

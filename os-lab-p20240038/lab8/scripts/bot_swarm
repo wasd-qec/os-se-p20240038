@@ -1,0 +1,10 @@
+#!/bin/bash
+
+script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+target="${1:-$script_dir/buy_widget}"
+
+for i in {1..50}; do
+    "$target" "Bot_$i" 2 &
+done
+
+wait

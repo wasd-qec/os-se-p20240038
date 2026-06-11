@@ -1,0 +1,8 @@
+Run 1 final inventory: 16
+Run 2 final inventory: 24
+Run 3 final inventory: 12
+Run 4 final inventory: 20
+Run 5 final inventory: 18
+
+Explanation:
+Without synchronization, multiple background processes execute the read-modify-write cycle concurrently. Two or more processes can read the same inventory value (e.g. 100) before any of them has written the updated value. Consequently, they both calculate and write the same next inventory value (e.g. 98), effectively 'losing' one or more sales updates. This classic Time-of-Check to Time-of-Use (TOC-TOU) race condition results in a final inventory greater than 0, even though 100 widgets were requested.

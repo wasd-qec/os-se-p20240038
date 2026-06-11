@@ -1,0 +1,8 @@
+=== drop zone permissions ===
+drwxr-xrwt 2 se-rith-chankolboth se-rith-chankolboth 4096 Jun 11 11:24 /home/se-rith-chankolboth/vendor_reports
+=== drop zone files ===
+total 8
+-rw-r--r-- 1 se-rith-chankolboth se-rith-chankolboth 27 Jun 11 11:25 my_rules.txt
+-rw-rw-r-- 1 se-chea-seavhong    se-chea-seavhong    15 Jun 11 11:26 partner_report.txt
+=== partner deletion result ===
+rm: cannot remove '/home/se-rith-chankolboth/vendor_reports/my_rules.txt': Permission denied

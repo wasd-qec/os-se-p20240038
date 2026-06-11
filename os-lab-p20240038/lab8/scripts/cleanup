@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# Get the script name to avoid moving itself
+script_name=$(basename "$BASH_SOURCE")
+
+for file in *; do
+    # Check if it is a regular file
+    if [ -f "$file" ]; then
+        # Avoid moving itself
+        if [ "$file" = "$script_name" ]; then
+            continue
+        fi
+        
+        # Get extension
+        filename=$(basename -- "$file")
+        extension="${filename##*.}"
+        
+        # If there is no dot or extension is same as filename (no extension)
+        if [ "$extension" = "$filename" ] || [ -z "$extension" ]; then
+            continue
+        fi
+        
+        # Create directory and move file
+        mkdir -p "$extension"
+        mv "$file" "$extension/"
+    fi
+done

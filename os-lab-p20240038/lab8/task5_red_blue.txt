@@ -1,0 +1,21 @@
+=== public api permissions ===
+drwxr-x--x 11 se-rith-chankolboth se-rith-chankolboth 4096 Jun 11 10:56 /home/se-rith-chankolboth
+drwxr-xr-x  2 se-rith-chankolboth se-rith-chankolboth 4096 Jun 11 10:56 /home/se-rith-chankolboth/public_api
+total 12
+-rwxr-xr-x 1 se-rith-chankolboth se-rith-chankolboth 1177 Jun 11 10:56 buy_widget
+-rw-rw-rw- 1 se-rith-chankolboth se-rith-chankolboth    0 Jun 11 10:56 inventory.lock
+-rw-rw-rw- 1 se-rith-chankolboth se-rith-chankolboth    3 Jun 11 10:56 inventory.txt
+-rw-rw-rw- 1 se-rith-chankolboth se-rith-chankolboth  671 Jun 11 10:56 sales.log
+=== inventory ===
+80
+=== red team sales evidence ===
+[p20240038] [SUCCESS] RedTeam_se-chea-seavhong_1 bought 2 widgets.
+[p20240038] [SUCCESS] RedTeam_se-chea-seavhong_2 bought 2 widgets.
+[p20240038] [SUCCESS] RedTeam_se-chea-seavhong_3 bought 2 widgets.
+[p20240038] [SUCCESS] RedTeam_se-chea-seavhong_4 bought 2 widgets.
+[p20240038] [SUCCESS] RedTeam_se-chea-seavhong_5 bought 2 widgets.
+[p20240038] [SUCCESS] RedTeam_se-chea-seavhong_6 bought 2 widgets.
+[p20240038] [SUCCESS] RedTeam_se-chea-seavhong_7 bought 2 widgets.
+[p20240038] [SUCCESS] RedTeam_se-chea-seavhong_8 bought 2 widgets.
+[p20240038] [SUCCESS] RedTeam_se-chea-seavhong_9 bought 2 widgets.
+[p20240038] [SUCCESS] RedTeam_se-chea-seavhong_10 bought 2 widgets.

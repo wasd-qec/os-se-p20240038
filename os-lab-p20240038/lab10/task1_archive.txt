@@ -1,6 +1,6 @@
 === archive sizes (plain vs compressed) ===
--rw-r--r-- 1 both both 1.3K Jun 16 13:51 /home/both/os-lab-automation/project_compressed.tar.gz
--rw-r--r-- 1 both both  10K Jun 16 13:51 /home/both/os-lab-automation/project_plain.tar
+-rw-rw-r-- 1 se-rith-chankolboth se-rith-chankolboth 1.3K Jun 16 16:09 /home/se-rith-chankolboth/os-lab-automation/project_compressed.tar.gz
+-rw-rw-r-- 1 se-rith-chankolboth se-rith-chankolboth  10K Jun 16 16:09 /home/se-rith-chankolboth/os-lab-automation/project_plain.tar
 === contents of compressed archive ===
 project/
 project/README.md

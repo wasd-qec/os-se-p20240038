@@ -1,23 +1,23 @@
 === backup script permissions ===
--rwxr-xr-x 1 both both 792 Jun 16 13:55 /home/both/bin/backup_project
+-rwxrwxr-x 1 se-rith-chankolboth se-rith-chankolboth 718 Jun 16 16:10 /home/se-rith-chankolboth/bin/backup_project
 === archives kept (should be 3) ===
-/home/both/os-lab-automation/backups/project_20260616_135517.tar.gz
-/home/both/os-lab-automation/backups/project_20260616_135516.tar.gz
-/home/both/os-lab-automation/backups/project_20260616_135515.tar.gz
+/home/se-rith-chankolboth/os-lab-automation/backups/project_20260616_161018.tar.gz
+/home/se-rith-chankolboth/os-lab-automation/backups/project_20260616_161017.tar.gz
+/home/se-rith-chankolboth/os-lab-automation/backups/project_20260616_161016.tar.gz
 === backup log ===
-2026-06-16 13:55:14 | starting backup of /home/both/os-lab-automation/project
-2026-06-16 13:55:14 | created archive /home/both/os-lab-automation/backups/project_20260616_135514.tar.gz
-2026-06-16 13:55:14 | no old archives to prune
-2026-06-16 13:55:14 | backup finished successfully
-2026-06-16 13:55:15 | starting backup of /home/both/os-lab-automation/project
-2026-06-16 13:55:15 | created archive /home/both/os-lab-automation/backups/project_20260616_135515.tar.gz
-2026-06-16 13:55:15 | no old archives to prune
-2026-06-16 13:55:15 | backup finished successfully
-2026-06-16 13:55:16 | starting backup of /home/both/os-lab-automation/project
-2026-06-16 13:55:16 | created archive /home/both/os-lab-automation/backups/project_20260616_135516.tar.gz
-2026-06-16 13:55:16 | no old archives to prune
-2026-06-16 13:55:16 | backup finished successfully
-2026-06-16 13:55:17 | starting backup of /home/both/os-lab-automation/project
-2026-06-16 13:55:17 | created archive /home/both/os-lab-automation/backups/project_20260616_135517.tar.gz
-2026-06-16 13:55:17 | pruned old archive /home/both/os-lab-automation/backups/project_20260616_135514.tar.gz
-2026-06-16 13:55:17 | backup finished successfully
+2026-06-16 16:10:15 | starting backup of /home/se-rith-chankolboth/os-lab-automation/project
+2026-06-16 16:10:15 | created archive /home/se-rith-chankolboth/os-lab-automation/backups/project_20260616_161015.tar.gz
+2026-06-16 16:10:15 | no old archives to prune
+2026-06-16 16:10:15 | backup finished successfully
+2026-06-16 16:10:16 | starting backup of /home/se-rith-chankolboth/os-lab-automation/project
+2026-06-16 16:10:16 | created archive /home/se-rith-chankolboth/os-lab-automation/backups/project_20260616_161016.tar.gz
+2026-06-16 16:10:16 | no old archives to prune
+2026-06-16 16:10:16 | backup finished successfully
+2026-06-16 16:10:17 | starting backup of /home/se-rith-chankolboth/os-lab-automation/project
+2026-06-16 16:10:17 | created archive /home/se-rith-chankolboth/os-lab-automation/backups/project_20260616_161017.tar.gz
+2026-06-16 16:10:17 | no old archives to prune
+2026-06-16 16:10:17 | backup finished successfully
+2026-06-16 16:10:18 | starting backup of /home/se-rith-chankolboth/os-lab-automation/project
+2026-06-16 16:10:18 | created archive /home/se-rith-chankolboth/os-lab-automation/backups/project_20260616_161018.tar.gz
+2026-06-16 16:10:18 | pruned old archive /home/se-rith-chankolboth/os-lab-automation/backups/project_20260616_161015.tar.gz
+2026-06-16 16:10:18 | backup finished successfully

@@ -1,0 +1,11 @@
+=== script permissions ===
+-rwxr-xr-x 1 both both 405 Jun 16 13:42 /home/both/bin/automation_demo
+=== log contents ===
+2026-06-16 13:42:55 | automation_demo started by user both
+2026-06-16 13:42:55 | working directory is /home/both/os-se-p20240038/os-lab-p20240038/lab10
+2026-06-16 13:42:55 | home directory is /home/both
+2026-06-16 13:42:55 | automation_demo finished successfully
+2026-06-16 13:42:55 | automation_demo started by user both
+2026-06-16 13:42:55 | working directory is /home/both/os-se-p20240038/os-lab-p20240038/lab10
+2026-06-16 13:42:55 | home directory is /home/both
+2026-06-16 13:42:55 | automation_demo finished successfully

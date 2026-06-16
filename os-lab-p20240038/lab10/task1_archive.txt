@@ -1,0 +1,13 @@
+=== archive sizes (plain vs compressed) ===
+-rw-r--r-- 1 both both 1.3K Jun 16 13:51 /home/both/os-lab-automation/project_compressed.tar.gz
+-rw-r--r-- 1 both both  10K Jun 16 13:51 /home/both/os-lab-automation/project_plain.tar
+=== contents of compressed archive ===
+project/
+project/README.md
+project/src/
+project/src/widget.py
+project/docs/
+project/docs/changelog.txt
+project/docs/notes.txt
+=== restore verification ===
+RESTORE OK: archive matches original

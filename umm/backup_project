@@ -1,0 +1,43 @@
+#!/bin/bash
+
+# backup_project - produces a timestamped, compressed archive of a project
+# and retains only the newest 3 archives.
+
+if [ "$#" -ne 2 ]; then
+    echo "Usage: backup_project <project_dir> <backup_dir>"
+    exit 1
+fi
+
+PROJECT_DIR="$1"
+BACKUP_DIR="$2"
+
+if [ ! -d "$PROJECT_DIR" ]; then
+    echo "Error: Project directory $PROJECT_DIR does not exist."
+    exit 1
+fi
+
+mkdir -p "$BACKUP_DIR"
+
+TIMESTAMP=$(date "+%Y%m%d_%H%M%S_%N")
+ARCHIVE_NAME="project_backup_$TIMESTAMP.tar.gz"
+ARCHIVE_PATH="$BACKUP_DIR/$ARCHIVE_NAME"
+
+echo "Archiving $PROJECT_DIR to $ARCHIVE_PATH..."
+tar -czf "$ARCHIVE_PATH" -C "$(dirname "$PROJECT_DIR")" "$(basename "$PROJECT_DIR")"
+
+if [ $? -eq 0 ]; then
+    echo "Archive created successfully."
+else
+    echo "Error: Failed to create archive."
+    exit 2
+fi
+
+# Pruning: keep only the newest 3 archives (retain 3, delete others)
+echo "Pruning older backups in $BACKUP_DIR (retaining newest 3)..."
+# List backup files matching the pattern, sort by modification time descending (newest first), skip the first 3
+ls -t "$BACKUP_DIR"/project_backup_*.tar.gz 2>/dev/null | tail -n +4 | while read -r OLD_BACKUP; do
+    echo "Deleting old backup: $OLD_BACKUP"
+    rm -f "$OLD_BACKUP"
+done
+
+echo "Backup and prune operation complete."

@@ -1,0 +1,62 @@
+#!/bin/bash
+
+# buy_reactor_core - purchase script for Reactor Core
+# QuantumTech Final Exam Part D
+
+# Rejects bad input: needs exactly 2 arguments
+if [ "$#" -ne 2 ]; then
+    echo "Error: Invalid arguments."
+    echo "Usage: buy_reactor_core <buyer_name> <quantity>"
+    exit 1
+fi
+
+BUYER_NAME="$1"
+QUANTITY="$2"
+
+# Validate quantity is a positive integer
+if [[ ! "$QUANTITY" =~ ^[0-9]+$ ]] || [ "$QUANTITY" -le 0 ]; then
+    echo "Error: Quantity must be a positive integer."
+    exit 1
+fi
+
+# Define anchored paths (on remote server)
+BASE_DIR="/home/se-rith-chankolboth"
+STOCK_FILE="$BASE_DIR/stock.txt"
+LOG_FILE="$BASE_DIR/sales.log"
+LOCK_FILE="$BASE_DIR/buy_reactor_core.lock"
+
+# Initialize files if they do not exist
+if [ ! -f "$STOCK_FILE" ]; then
+    echo "80" > "$STOCK_FILE"
+fi
+if [ ! -f "$LOG_FILE" ]; then
+    touch "$LOG_FILE"
+fi
+
+# Open lock file descriptor
+exec 200>"$LOCK_FILE"
+
+# Acquire exclusive lock (blocks until lock is acquired)
+flock -x 200
+
+# Critical Section
+CURRENT_STOCK=$(cat "$STOCK_FILE")
+
+# Check if we have enough stock
+if [ "$CURRENT_STOCK" -lt "$QUANTITY" ]; then
+    echo "Purchase failed: Not enough stock (Current stock: $CURRENT_STOCK, Requested: $QUANTITY)."
+    exit 2
+fi
+
+# Decrement stock
+NEW_STOCK=$(( CURRENT_STOCK - QUANTITY ))
+echo "$NEW_STOCK" > "$STOCK_FILE"
+
+# Log transaction (include student ID: p20240038)
+TIMESTAMP=$(date "+%Y-%m-%d %H:%M:%S")
+echo "[$TIMESTAMP] Buyer: $BUYER_NAME | Quantity: $QUANTITY | Stock Before: $CURRENT_STOCK | Stock After: $NEW_STOCK | Student ID: p20240038" >> "$LOG_FILE"
+
+echo "Purchase successful! Buyer: $BUYER_NAME purchased $QUANTITY Reactor Core. Stock left: $NEW_STOCK."
+
+# Release lock
+flock -u 200

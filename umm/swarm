@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# swarm - launches 40 concurrent purchases in the background and waits
+
+CONCURRENT_BUYERS=40
+echo "Launching $CONCURRENT_BUYERS concurrent purchases..."
+
+for ((i=1; i<=CONCURRENT_BUYERS; i++)); do
+    # Launch purchase script in the background
+    # Each buyer has a unique name and buys 1 core
+    buy_reactor_core "buyer_$i" 1 &
+done
+
+# Wait for all background processes to complete
+wait
+
+echo "All purchases completed."

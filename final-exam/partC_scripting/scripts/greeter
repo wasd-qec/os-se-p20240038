@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# A script that prints a dynamic banner
+# Uses variables, arrays, and command substitution
+
+# 1. Variables and Command Substitution
+CURRENT_USER=$(whoami)
+LOGGED_IN_USERS=$(who | wc -l)
+SYSTEM_UPTIME=$(uptime -p)
+
+# 2. Array of messages
+MESSAGES=(
+    "Welcome to the QuantumTech Operations Console!"
+    "All systems operational. Have a great day!"
+    "Remember: Check the locks, test the threads, verify the backups!"
+    "System load is stable. Reactor cores are cooling normally."
+)
+
+# Get array length
+ARRAY_LENGTH=${#MESSAGES[@]}
+# Choose a random index
+RANDOM_INDEX=$(( RANDOM % ARRAY_LENGTH ))
+RANDOM_MSG=${MESSAGES[$RANDOM_INDEX]}
+
+# Print the banner
+echo "==============================================="
+echo "  QuantumTech Operator Dashboard"
+echo "==============================================="
+echo "User:         $CURRENT_USER"
+echo "Active Users: $LOGGED_IN_USERS"
+echo "Uptime:       $SYSTEM_UPTIME"
+echo "-----------------------------------------------"
+echo "Message of the Day:"
+echo "  $RANDOM_MSG"
+echo "==============================================="

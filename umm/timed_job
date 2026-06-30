@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# timed_job - appends a clearly identifiable timestamped line to the output file it is given
+
+if [ "$#" -ne 1 ]; then
+    echo "Usage: timed_job <output_file>"
+    exit 1
+fi
+
+OUTPUT_FILE="$1"
+
+# Ensure parent directory exists
+mkdir -p "$(dirname "$OUTPUT_FILE")"
+
+TIMESTAMP=$(date "+%Y-%m-%d %H:%M:%S")
+echo "[$TIMESTAMP] QuantumTech Timed Job triggered successfully. Operator: se-rith-chankolboth (Student ID: p20240038)" >> "$OUTPUT_FILE"
+
+echo "Log appended to $OUTPUT_FILE."

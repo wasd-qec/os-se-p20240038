@@ -1,0 +1,44 @@
+#!/bin/bash
+
+# A script that loops over specified directories, scans files,
+# checks for existence/readability, and consolidates their contents.
+
+if [ "$#" -lt 1 ]; then
+    echo "Usage: $0 <dir1> [dir2 ... dirN]"
+    exit 1
+fi
+
+REPORT_FILE="consolidated_report.txt"
+echo "=== Consolidated Report ===" > "$REPORT_FILE"
+echo "Generated at: $(date)" >> "$REPORT_FILE"
+echo "Directories scanned: $@" >> "$REPORT_FILE"
+echo "-----------------------------------" >> "$REPORT_FILE"
+
+for DIR in "$@"; do
+    if [ ! -d "$DIR" ]; then
+        echo "Warning: Directory $DIR does not exist. Skipping."
+        continue
+    fi
+
+    echo "Scanning directory: $DIR"
+    
+    # Loop through items in directory
+    for FILE in "$DIR"/*; do
+        # Handle empty directories where wildcard doesn't expand
+        if [ ! -e "$FILE" ]; then
+            continue
+        fi
+
+        # Test for existence and readability
+        if [ -f "$FILE" ] && [ -r "$FILE" ]; then
+            echo "Consolidating: $FILE"
+            echo "=== File: $FILE ===" >> "$REPORT_FILE"
+            cat "$FILE" >> "$REPORT_FILE"
+            echo -e "\n-----------------------------------" >> "$REPORT_FILE"
+        else
+            echo "Skipping (unreadable/missing/not-file): $FILE"
+        fi
+    done
+done
+
+echo "Scanning complete. Consolidated report saved to $REPORT_FILE."

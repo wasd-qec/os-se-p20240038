@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# backup_exam - archives the entire final-exam folder to ~/exam-backups/
+
+REPO_DIR="/home/se-rith-chankolboth/os-se-p20240038"
+EXAM_DIR="$REPO_DIR/final-exam"
+BACKUP_DIR="/home/se-rith-chankolboth/exam-backups"
+
+if [ ! -d "$EXAM_DIR" ]; then
+    echo "Error: final-exam directory $EXAM_DIR does not exist."
+    exit 1
+fi
+
+mkdir -p "$BACKUP_DIR"
+
+TIMESTAMP=$(date "+%Y%m%d_%H%M%S")
+ARCHIVE_NAME="final-exam-$TIMESTAMP.tar.gz"
+ARCHIVE_PATH="$BACKUP_DIR/$ARCHIVE_NAME"
+
+echo "Creating compressed tarball of final-exam..."
+tar -czf "$ARCHIVE_PATH" -C "$REPO_DIR" "final-exam"
+
+if [ $? -eq 0 ]; then
+    echo "Backup successful: $ARCHIVE_PATH"
+else
+    echo "Error: Backup failed."
+    exit 2
+fi

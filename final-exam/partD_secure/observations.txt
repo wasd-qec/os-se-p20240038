@@ -1,0 +1,17 @@
+QuantumTech - Concurrency & Race Condition Observations
+Student ID: p20240038
+
+We executed 40 concurrent buyers (each purchasing 1 core) against an initial stock of 80.
+Without locking, we ran the swarm 5 times and recorded the final stock values:
+
+Run 1 final stock: 76
+Run 2 final stock: -1
+Run 3 final stock: -1
+Run 4 final stock: 72
+Run 5 final stock: -1
+
+Additionally, we observed shell errors:
+"buy_reactor_core: line 46: [: : integer expression expected"
+This occurs because one process was trying to read the stock file while another was truncating it during a write, causing the read value to be empty.
+
+The results are highly inconsistent and incorrect due to the classic lost-update and time-of-check-to-time-of-use (TOCTOU) race conditions.

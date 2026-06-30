@@ -1,0 +1,18 @@
+drwx--x--x 2 se-rith-chankolboth se-rith-chankolboth 4096 Jun 30 14:24 /home/se-rith-chankolboth/os-se-p20240038/final-exam/partB_security/shared_dir
+-rw------- 1 se-rith-chankolboth se-rith-chankolboth 0 Jun 30 14:24 /home/se-rith-chankolboth/os-se-p20240038/final-exam/partB_security/shared_dir/private_file
+  File: /home/se-rith-chankolboth/os-se-p20240038/final-exam/partB_security/shared_dir
+  Size: 4096            Blocks: 8          IO Block: 4096   directory
+Device: 252,0   Inode: 47474501    Links: 2
+Access: (0711/drwx--x--x)  Uid: ( 1139/se-rith-chankolboth)   Gid: ( 1141/se-rith-chankolboth)
+Access: 2026-06-30 14:24:52.751112490 +0700
+Modify: 2026-06-30 14:24:52.753112495 +0700
+Change: 2026-06-30 14:24:52.755112500 +0700
+ Birth: 2026-06-30 14:24:52.751112490 +0700
+  File: /home/se-rith-chankolboth/os-se-p20240038/final-exam/partB_security/shared_dir/private_file
+  Size: 0               Blocks: 0          IO Block: 4096   regular empty file
+Device: 252,0   Inode: 47474502    Links: 1
+Access: (0600/-rw-------)  Uid: ( 1139/se-rith-chankolboth)   Gid: ( 1141/se-rith-chankolboth)
+Access: 2026-06-30 14:24:52.753112495 +0700
+Modify: 2026-06-30 14:24:52.753112495 +0700
+Change: 2026-06-30 14:24:52.754112497 +0700
+ Birth: 2026-06-30 14:24:52.753112495 +0700

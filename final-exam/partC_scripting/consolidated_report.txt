@@ -1,0 +1,12 @@
+=== Consolidated Report ===
+Generated at: Tue Jun 30 02:25:19 PM +07 2026
+Directories scanned: /home/se-rith-chankolboth/test_collector/dir1 /home/se-rith-chankolboth/test_collector/dir2
+-----------------------------------
+=== File: /home/se-rith-chankolboth/test_collector/dir1/fileA.txt ===
+This is file A
+
+-----------------------------------
+=== File: /home/se-rith-chankolboth/test_collector/dir2/fileB.txt ===
+This is file B
+
+-----------------------------------

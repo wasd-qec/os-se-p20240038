@@ -3,6 +3,7 @@
 # swarm - launches 40 concurrent purchases in the background and waits
 
 CONCURRENT_BUYERS=40
+export PATH="$HOME/bin:$PATH"
 echo "Launching $CONCURRENT_BUYERS concurrent purchases..."
 
 for ((i=1; i<=CONCURRENT_BUYERS; i++)); do

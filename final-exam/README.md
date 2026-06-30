@@ -1,17 +1,16 @@
-# Final Exam — <Your Name>
+# Final Exam — Rith Chankolboth
 
 <!-- ===== COVER SHEET — required first section. Fill EVERY line. ===== -->
 ```
-Student name:
-Student ID:
-Server username:
-Exam scenario value (COMPANY / PRODUCT):
-Date & start time:
-AI assistant used (name/none):
+Student name: Rith Chankolboth
+Student ID: p20240038
+Server username: se-rith-chankolboth
+Exam scenario value (COMPANY / PRODUCT): QuantumTech / Reactor Core
+Date & start time: June 30, 2026 at 2:00 PM
+AI assistant used (name/none): Antigravity
 ```
 
 > Exact commands per part are in `commands.md`. Live-curveball answers are in `live_mods.md`.
-> Replace every `<...>` below. Keep answers tied to **your own** scenario numbers.
 
 ---
 
@@ -24,12 +23,10 @@ AI assistant used (name/none):
 
 **Written (one short answer)**
 
-- **Why does a worker thread's joined result reach the main thread, but a forked
-  child's value would not?**
-  <threads share one address space (joined value read from shared memory); a forked
-  child runs in a copied address space, so its changes never reach the parent>
+- **Why does a worker thread's joined result reach the main thread, but a forked child's value would not?**
+  Threads share the same virtual address space (including the heap and global variables) of the parent process. When a thread exits, its return value is stored in shared memory where the main thread can access it upon joining. In contrast, `fork()` spawns a separate child process with its own copy of the address space. Any modifications made by the child occur in its independent memory space, meaning its values cannot reach the parent process directly without explicit Inter-Process Communication (IPC).
 
-**Anything not completed:** <none / ...>
+**Anything not completed:** none
 
 ---
 
@@ -42,10 +39,9 @@ AI assistant used (name/none):
 **Written (one short answer)**
 
 - **Translate your private file's final octal mode into the 9-char symbolic string**
-  (e.g. `600` → `rw-------`).
-  octal `<NNN>` → `<rwx-style>`
+  `rw-------` (octal `600` for owner read/write only)
 
-**Anything not completed:** <none / ...>
+**Anything not completed:** none
 
 ---
 
@@ -57,12 +53,10 @@ AI assistant used (name/none):
 
 **Written (one short answer)**
 
-- **Why did `greeter` fail to run by name before you added your `bin` directory to
-  PATH?**
-  <the shell only searches directories listed in $PATH; adding ~/bin let it resolve the
-  bare name `greeter`>
+- **Why did `greeter` fail to run by name before you added your `bin` directory to PATH?**
+  When a command is run by name (without an absolute or relative path prefix), the shell searches for the corresponding executable file only in the directories specified by the `$PATH` environment variable. Before `~/bin` was added to `$PATH`, the shell could not locate the script, resulting in a "command not found" error.
 
-**Anything not completed:** <none / ...>
+**Anything not completed:** none
 
 ---
 
@@ -74,13 +68,10 @@ AI assistant used (name/none):
 
 **Written (one short answer)**
 
-- **Why did the unpatched `swarm` sometimes leave more stock than the correct final
-  value (with `<INITIAL_STOCK>` stock and `<SWARM_SIZE>` concurrent buyers)?**
-  <concurrent buyers read the same stale stock (lost update), so some decrements
-  overwrote each other — fewer than expected applied>
+- **Why did the unpatched `swarm` sometimes leave more stock than the correct final value (with `80` stock and `40` concurrent buyers)?**
+  Because of the lost-update race condition. Without locking, multiple processes concurrently executed the read-modify-write sequence. Several processes read the same initial/current stock value before any of them wrote the updated decremented stock. As a result, their writes overwrote each other, resulting in fewer effective decrements than the actual number of purchases made.
 
-**Anything not completed:** <note here if the race was hard to reproduce — D3's lock is
-what's graded>
+**Anything not completed:** none
 
 ---
 
@@ -93,7 +84,6 @@ what's graded>
 **Written (one short answer)**
 
 - **Archiving vs compression — which one actually shrank the bytes, and why?**
-  <tar archives (bundles) many files into one; gzip/compression shrinks bytes —
-  compression reduced the size>
+  Compression (`gzip`) actually shrank the bytes by using compression algorithms to find and remove redundancies in the files. Archiving (`tar`) simply packages/bundles multiple files and directories into a single file container without shrinking it (and actually adds minor metadata/header overhead).
 
-**Anything not completed:** <none / ...>
+**Anything not completed:** none

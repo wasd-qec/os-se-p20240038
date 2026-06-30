@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # timed_job - appends a clearly identifiable timestamped line to the output file it is given
+# Idempotent: skips if token RUNGUARD already recorded for today
 
 if [ "$#" -ne 1 ]; then
     echo "Usage: timed_job <output_file>"
@@ -12,7 +13,16 @@ OUTPUT_FILE="$1"
 # Ensure parent directory exists
 mkdir -p "$(dirname "$OUTPUT_FILE")"
 
+TOKEN="RUNGUARD"
+TODAY=$(date "+%Y-%m-%d")
+# Check if a line with today’s date and the token already exists
+if grep -q "\[$TODAY $TOKEN\]" "$OUTPUT_FILE" 2>/dev/null; then
+    echo "Run already recorded for today; skipping."
+    exit 0
+fi
+
 TIMESTAMP=$(date "+%Y-%m-%d %H:%M:%S")
-echo "[$TIMESTAMP] QuantumTech Timed Job triggered successfully. Operator: se-rith-chankolboth (Student ID: p20240038)" >> "$OUTPUT_FILE"
+# Append the tokened line
+echo "[$TIMESTAMP] $TOKEN: QuantumTech Timed Job triggered successfully. Operator: se-rith-chankolboth (Student ID: p20240038)" >> "$OUTPUT_FILE"
 
 echo "Log appended to $OUTPUT_FILE."

@@ -13,10 +13,19 @@ fi
 BUYER_NAME="$1"
 QUANTITY="$2"
 
+# Define per‑buyer cap
+CAP=4
+
 # Validate quantity is a positive integer
 if [[ ! "$QUANTITY" =~ ^[0-9]+$ ]] || [ "$QUANTITY" -le 0 ]; then
     echo "Error: Quantity must be a positive integer."
     exit 1
+fi
+
+# Enforce purchase cap
+if [ "$QUANTITY" -gt "$CAP" ]; then
+    echo "Error: Purchase quantity exceeds per‑buyer cap of $CAP."
+    exit 3
 fi
 
 # Define anchored paths (on remote server)

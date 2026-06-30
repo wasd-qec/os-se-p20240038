@@ -1,7 +1,7 @@
     PID    SPID TTY          TIME CMD
-1572325 1572325 ?        00:00:00 thread_demo
-1572325 1572327 ?        00:00:00 thread_demo
-1572325 1572328 ?        00:00:00 thread_demo
-1572325 1572329 ?        00:00:00 thread_demo
-1572325 1572330 ?        00:00:00 thread_demo
-1572325 1572331 ?        00:00:00 thread_demo
+  24377   24377 pts/3    00:00:00 thread_demo
+  24377   24379 pts/3    00:00:00 thread_demo
+  24377   24380 pts/3    00:00:00 thread_demo
+  24377   24381 pts/3    00:00:00 thread_demo
+  24377   24382 pts/3    00:00:00 thread_demo
+  24377   24383 pts/3    00:00:00 thread_demo
